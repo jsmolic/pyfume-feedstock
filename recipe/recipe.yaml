@@ -2,15 +2,15 @@ schema_version: 1
 
 context:
   name: pyfume
-  version: "0.2.25"
+  version: "0.3.4"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyFUME-${{ version }}.tar.gz
-  sha256: b83d481c5c8d77dcafddec873d9e2983a5f6fab2d3639b18b10cacb885dbbdf0
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name}}-${{ version }}.tar.gz
+  sha256: 5305b93b015fbb4d650cac33ef6881d9e81b3a8c5bfadf149c41485236667df5
 
 build:
   number: 0
@@ -23,11 +23,11 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - scipy
-    - numpy
-    - simpful
-    - fst-pso
-    - pandas
+    - scipy ==1.10.1
+    - numpy ==1.24.4
+    - simpful ==2.12.0
+    - fst-pso ==1.8.1
+    - pandas ==1.5.3
 
 tests:
   - python:
@@ -47,4 +47,3 @@ about:
 extra:
   recipe-maintainers:
     - bgruening
-
